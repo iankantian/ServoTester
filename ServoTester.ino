@@ -1,10 +1,10 @@
-// Ugly Servo Tester
 /*
-   Hitting 'q' and all after you hit 'enter' will take 100 uS off the pulse width of the servo on pin 9
+   Sending serial 'q' will take 100 uS off the pulse width of the servo on pin 9
    'e' will add 100 uS
    'a' will -10 uS, 'd' will +10 uS
    'z' will -1 uS, 'd' will +1 uS
-   Every time you change the pulse width, the Serial port will print
+   Every time you change the pulse width, the Serial port will print position,
+   but on some serial terminals, simply typing the letter will execute, as the letters are sent immediately
 */
 int servoPin = 9;
 void setup() {
@@ -21,9 +21,6 @@ void setup() {
   Serial.println("'h' = print help!");
   pinMode(servoPin, OUTPUT);
 }
-
-// Hex 0 Servo: 500 to 2324
-// Hex 1 Servo: 540 to 2620 with hardstop still installed, could go further
 
 int pos = 1500;
 
